@@ -1,6 +1,6 @@
 \version "2.24.1"
-% March 1 proofread, March 2 still needs proofreading
 #(set-global-staff-size 17)
+% Proofread by Wilh3lm, may want someone else to look over it
 \paper {
   #(define fonts
     (set-global-fonts
