@@ -738,7 +738,7 @@
         r <bes des>8 8 8 r <c e,>8 8 8
         r <aes c>8 8 8 r8 8 8 8
         r8 8 8 8 r <g c>8 8 8
-        r <f aes>8 8 8 8 d\rest <des f>8. 16
+        r <f aes>8 8 8 8 d\rest \stemNeutral <des f>8. 16
       }\new Voice{\voiceTwo
         f8 r r4 f8 r r4
         f8 r r4 f8 r r4
@@ -751,4 +751,16 @@
       <c g'>8-> r <bes! bes'!>4^\> <a a'> <g g'>\! \bar "||"
     }
   >>
+}
+\markup \fill-line {
+  \center-column{
+    \bold \fontsize #10 "Editorial notes"
+  }
+}
+\markup \wordwrap{
+  \vspace #1.5
+  \fontsize #4 {
+    The source for this engraving is the edition published in 1893 by G. Courleux, as available from IMSLP at
+    \fontsize #-2 https://imslp.org/wiki/2_Marches_(Amplement-Jallet,_F.)
+  }
 }
