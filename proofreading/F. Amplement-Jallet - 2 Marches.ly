@@ -8,6 +8,7 @@
      #:brace "emmentaler"
      #:factor (/ staff-height pt 20)
    ))
+  print-all-headers = ##t
 }
 
 \header {
@@ -19,7 +20,10 @@
 
 \score{
   \header{
-    piece = "1. Souvenir de Beaugency"
+    subsubtitle = "Tribute to Miss Marie Fondreton"
+    title=##f
+    composer=##f
+    subtitle = "1. Souvenir de Beaugency"
   }
   \new PianoStaff<<
     \new Staff \relative{
@@ -435,7 +439,10 @@
 
 \score{
   \header{
-    piece = "2. Marthe"
+    subsubtitle = "To my niece Marthe Coisel"
+    title=##f
+    composer=##f
+    subtitle = "2. Marthe"
   }
   \new PianoStaff<<
     \new Staff \relative{
@@ -458,7 +465,7 @@
       <<{\voiceOne a2~8}\new Voice{\voiceTwo r4 <e c>4 8}>> b'\rest <g! bes!>8.\f <f a>16
       \override Rest.voiced-position = #4.
       
-      <e g>8. <dis fis>16 <e g>8. <f a>16 <g bes>8. <a c>16 <bes d!>8. <g e'>16
+      \stemNeutral <e g>8. <dis fis>16 <e g>8. <f a>16 <g bes>8. <a c>16 <bes d!>8. <g e'>16
       <a f'>4-> <f a>-> <a c>8-> r <bes d>8.\mf <a c>16
       
       \once \override Tie.direction = #CENTER
@@ -517,7 +524,7 @@
       <<{\voiceOne
         <c f a>8-> r c'4->\ff~ \tuplet 3/2{8 d! c} <b dis,> <a dis,>
         g8. e16 a8. e16 f!8. d16 g8. b,16
-        c!2~8 r c'4\mf \bar "||"
+        c!2~8 r \stemDown c'4\mf \bar "||"
       }\new Voice{\voiceTwo
         s2 dis,4 s4
         e8 r cis r d! r b r
@@ -526,7 +533,7 @@
       
       \repeat segno 2{
         %REPEATED PART
-        
+        \stemNeutral
         c'4 a f a
         c2. d4
         c bes d, e
@@ -537,7 +544,7 @@
         <<{\voiceOne a2~8}\new Voice{\voiceTwo r4 <e c>4 8}>> b'\rest <g! bes!>8.\f <f a>16
         \override Rest.voiced-position = #4.
       
-        <e g>8. <dis fis>16 <e g>8. <f a>16 <g bes>8. <a c>16 <bes d!>8. <g e'>16
+        \stemNeutral <e g>8. <dis fis>16 <e g>8. <f a>16 <g bes>8. <a c>16 <bes d!>8. <g e'>16
         <a f'>4-> <f a>-> <a c>8-> r <bes d>8.\mf <a c>16
       
         \once \override Tie.direction = #CENTER
@@ -684,7 +691,7 @@
       r8 f,,(a[c]f)r r4
       <c bes' c>4-> 4-> 4-> 4->
       <f a c>8 r <des aes'>2-> 4
-      <c a'!>8-> 4 8 <c g' bes>8 8 8 8
+      <c a'!>8-> 4 8 <c g' bes!>8 8 8 8
       <f a>4 <c c,>-> <f, f,>8-> r \bar "||"
       
       \key aes \major % TRIO
