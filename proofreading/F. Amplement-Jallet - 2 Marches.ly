@@ -1,6 +1,6 @@
 \version "2.24.1"
 #(set-global-staff-size 17)
-% Proofread by Wilh3lm, may want someone else to look over it
+% Proofread by Wilh3lm, others looking over it for additional corrections
 \paper {
   #(define fonts
     (set-global-fonts
@@ -354,7 +354,7 @@
       }\new Voice{\voiceTwo
         bes4 4 8 s4.
       }>>
-      
+      \stemNeutral
       a8[f']gis,[f']a,[f']f,[f']
       bes, bes d f bes\> f d f
       bes,4\! <bes f'> <bes e> <bes e>
@@ -376,7 +376,7 @@
       }\new Voice{\voiceTwo
         bes,4 4 8 s4.
       }>>
-      
+      \stemNeutral
       a8[f']gis,[f']a,[f']f,[f']
       bes, bes d f bes f d f
       bes,4 <bes f'> <d fis> <d fis>
@@ -399,6 +399,7 @@
       <es! es,!>8[<d d,>]<c c,> <bes bes,> <a a,> r r4
       <bes f'>4 <bes f'> <bes e> <bes e>
       <<{\voiceOne f'2~8 r r4}\new Voice{\voiceTwo bes,4 4 8 s4.}>> \override Rest.voiced-position = #4.
+      \stemNeutral
       a8[f']gis,[f']a,[f']f,[f']
       bes, bes d f bes f d f
       bes,4 <bes f'> <d fis> <d fis>
