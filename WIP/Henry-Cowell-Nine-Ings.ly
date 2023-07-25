@@ -16,7 +16,9 @@
   title = "Nine Ings"
   composer = "Henry Cowell"
   copyright = "Piece in public domain, edition by Wilh3lm released under CC BY-SA 4.0"
-  tagline = "Engraved with Lilypond [VERSION] by Wilh3lm, [Date]. Edition released under CC BY-SA 4.0"
+  tagline = "Engraved with Lilypond 2.24.1 by Wilh3lm, July 18 2023 - [Completion date]. Edition released under CC BY-SA 4.0"
+  opus = "HC 353/1-9"
+  % There are five more that werent published in AMP, looking for those as well
 }
 
 \score{
@@ -143,7 +145,15 @@
           <d e>4 <d fis>8
           <fis a>4 <c d>8
           <bes d>4^\< <d g>8\!
-          <g bes>4)
+          <g bes>4) \break 8(
+          <g a> <g bes> <f a>
+          <d f> <d g> <d f>
+          <a d>8. <bes e>16 <a d>8
+          <a cis>4) <g cis>8(
+          <gis d'>8. <e'>16 \break <d f>8\<
+          <d f>8. g16 <cis, e>8\!
+          d4.~
+          4~)
         }\new Voice \relative{\voiceTwo
           %second voice
           f'4 gis8
@@ -158,11 +168,24 @@
           r d-. es-. d-. bes-. a-.
           r g-. gis-. a-. bes-. c-.
           r es-. d-. f-. es-. d-.
+          r cis-. d-. es-. d-. cis-.
+          r a-. c-. ces-. bes-. a-.
+          r f-. aes-. g-. ges-. f-.
+          r e-. fis-. g-. f-. e-.
+          r f-. b-. bes-. a-. gis-.
+          r a-. c-._\markup \italic "rit." ces-. bes-. a-.
+          f4 <e g>8\>
+          ~8 <d f>\! % MAKE THIS TIE OVER
+        }\new Voice \relative{\voiceFour
+          \repeat unfold 18 {s4.}
+          a'8[aes]
         }>>
       }
       \alternative{
         \volta 1{
           % NOT REPEATED chord and trio
+          <d, f d'>8_\markup \italic "a tempo"\p
+          %<<{\voiceOne <d, f d'>8_\markup \italic "a tempo"\p}\new Voice{\voiceTwo <d f>8}>>
         }
         \volta 2 \volta#'() {
           \section
@@ -204,6 +227,14 @@
       es4 des32-. ces-. bes-. beses-.
       aes8.[des16-.] \clef treble c32-. des-. es-. f-.
       ges8.[e16-.]f32-. es-. des-. c-.
+      ces8.[bes32-. ces-.] des-. es-. f-. ges-.
+      aes8.[bes32-. aes-.]ges-. f-. es-. des-.
+      es4 f32-. es-. des-. c-. \clef bass
+      bes4 ces32-. aes-. ges-. f-.
+      es4 aes32-. ges-. f-. es-.
+      des-. es-. f-. ges-. aes-.[bes-. c-. des-.]\clef treble es-. f-. ges-. aes-.
+      ges-. f-. es-. des-. \clef bass c-.[bes-. aes-. ges-.] f-. es-. des-. c-.
+      bes16-. aes-. ges-. f-. fes-. es-. \bar "||"
     }
   >>
 }
