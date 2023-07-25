@@ -126,11 +126,43 @@
         <gis d' e>4 <a d fis>8
         <d fis a>4 \break <fis, c' d>8
         <g bes d>4 <bes d g>8
-        <d g bes>4)
+        <d g bes>4) 8(
+        <cis g' a> <d g bes> <d f a>
+        <a d f> <bes d g> <a d f>
+        <f a d>8. <g bes e>16 <f a d>8
+        <e a cis>4) \break <e g cis>8^(
+        <<{\voiceOne
+          <gis d'>8. e'16 <d f>8
+          <d f>8. g16 <cis, e>8
+          <b d>4.~
+          4) <gis ais>8\p(
+          <gis b>4 cis8
+          <cis e>4 \break <g a>8
+          <f a>4^\< <a d>8\!
+          <d f>4) <d f>8(
+          <d e>4 <d fis>8
+          <fis a>4 <c d>8
+          <bes d>4^\< <d g>8\!
+          <g bes>4)
+        }\new Voice \relative{\voiceTwo
+          %second voice
+          f'4 gis8
+          a4 g8
+          aes8(bes16-.)beses-. aes-. g-.
+          f8(gis-.) f-.
+          f16(e-.)f-. ges-. <f a>-. e-.
+          r f-. e-. f-. d-. cis-.
+          r d-. dis-. e-. f-. g-.
+          r a-. gis-. bes-. a-. b-.
+          r a-. gis-. bes-. c-. b-.
+          r d-. es-. d-. bes-. a-.
+          r g-. gis-. a-. bes-. c-.
+          r es-. d-. f-. es-. d-.
+        }>>
       }
       \alternative{
         \volta 1{
-          % NOT REPEATED
+          % NOT REPEATED chord and trio
         }
         \volta 2 \volta#'() {
           \section
@@ -156,6 +188,22 @@
       es4 des32-. c-. bes-. beses-.
       aes8.[des16-.] \clef treble c32-. des-. es-. f-.
       ges8.[e16] f32-. es-. des-. c-.
+      ces8~16[bes32-. ces-.] des-. es-. f-. ges-.
+      aes8.[bes32-. aes-.]ges-. f-. es-. des-.
+      es4 f32-. es-. des-. c-. \clef bass
+      bes4 ces32-. aes-. ges-. f-.
+      es4 aes32-. ges-. f-. es-.
+      des4-. aes32-. bes-. c-. des-.
+      es4 c32-. des-. es-. f-.
+      ges4 f32-. es-. eses-. des-.
+      c4 e32-. des-. c-. ces-.
+      bes4 des32-. f-. aes-. a-.
+      bes4 a32-. f-. es-. eses-.
+      des4 es32-. ges-. aes-. a-.
+      bes4 c32-. des-. d-. f-.
+      es4 des32-. ces-. bes-. beses-.
+      aes8.[des16-.] \clef treble c32-. des-. es-. f-.
+      ges8.[e16-.]f32-. es-. des-. c-.
     }
   >>
 }
