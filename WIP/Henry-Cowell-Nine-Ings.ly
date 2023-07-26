@@ -17,7 +17,6 @@
   composer = "Henry Cowell"
   copyright = "Piece in public domain, edition by Wilh3lm released under CC BY-SA 4.0"
   tagline = "Engraved with Lilypond 2.24.1 by Wilh3lm, July 18 2023 - [Completion date]. Edition released under CC BY-SA 4.0"
-  opus = "HC 353/1-9"
   % There are five more that werent published in AMP, looking for those as well
 }
 
@@ -27,6 +26,7 @@
     subsubtitle = ##f
     title=##f
     composer=##f
+    opus="HC 353/1"
   }
   \new PianoStaff<<
     \new Staff \relative{
@@ -110,6 +110,7 @@
     subsubtitle = ##f
     title=##f
     composer=##f
+    opus="HC 353/2"
   }
   \new PianoStaff<<
     \new Staff \relative{
@@ -119,21 +120,21 @@
       \partial 4
       \tempo "Vivo e leggiero" 8 = 144
       r8\pp r \bar "||"
-      \repeat segno 2{
-        % REPEATED PART
-        <dis' a' b>4->(<e a cis>8
-        <a cis e>4 <cis, g' a>8
-        <d f a>4 <f a d>8
-        <a d f>4) 8(
-        <gis d' e>4 <a d fis>8
-        <d fis a>4 \break <fis, c' d>8
-        <g bes d>4 <bes d g>8
-        <d g bes>4) 8(
-        <cis g' a> <d g bes> <d f a>
-        <a d f> <bes d g> <a d f>
-        <f a d>8. <g bes e>16 <f a d>8
-        <e a cis>4) \break <e g cis>8^(
-        <<{\voiceOne
+      <<{\voiceOne
+        \repeat segno 2{
+          % REPEATED PART
+          <dis' a' b>4->(<e a cis>8
+          <a cis e>4 <cis, g' a>8
+          <d f a>4 <f a d>8
+          <a d f>4) 8(
+          <gis d' e>4 <a d fis>8
+          <d fis a>4 \break <fis, c' d>8
+          <g bes d>4 <bes d g>8
+          <d g bes>4) 8(
+          <cis g' a> <d g bes> <d f a>
+          <a d f> <bes d g> <a d f>
+          <f a d>8. <g bes e>16 <f a d>8
+          <e a cis>4) \break <e g cis>8^(
           <gis d'>8. e'16 <d f>8
           <d f>8. g16 <cis, e>8
           <b d>4.~
@@ -154,43 +155,43 @@
           <d f>8. g16 <cis, e>8\!
           d4.~
           4~)
-        }\new Voice \relative{\voiceTwo
-          %second voice
-          f'4 gis8
-          a4 g8
-          aes8(bes16-.)beses-. aes-. g-.
-          f8(gis-.) f-.
-          f16(e-.)f-. ges-. <f a>-. e-.
-          r f-. e-. f-. d-. cis-.
-          r d-. dis-. e-. f-. g-.
-          r a-. gis-. bes-. a-. b-.
-          r a-. gis-. bes-. c-. b-.
-          r d-. es-. d-. bes-. a-.
-          r g-. gis-. a-. bes-. c-.
-          r es-. d-. f-. es-. d-.
-          r cis-. d-. es-. d-. cis-.
-          r a-. c-. ces-. bes-. a-.
-          r f-. aes-. g-. ges-. f-.
-          r e-. fis-. g-. f-. e-.
-          r f-. b-. bes-. a-. gis-.
-          r a-. c-._\markup \italic "rit." ces-. bes-. a-.
-          f4 <e g>8\>
-          ~8 <d f>\! % MAKE THIS TIE OVER
-        }\new Voice \relative{\voiceFour
-          \repeat unfold 18 {s4.}
-          a'8[aes]
-        }>>
-      }
-      \alternative{
-        \volta 1{
-          % NOT REPEATED chord and trio
-          <d, f d'>8_\markup \italic "a tempo"\p
-          %<<{\voiceOne <d, f d'>8_\markup \italic "a tempo"\p}\new Voice{\voiceTwo <d f>8}>>
         }
-        \volta 2 \volta#'() {
-          \section
-          \sectionLabel "Coda"
+        \alternative{
+          \volta 1{
+            % NOT REPEATED chord and trio
+            <d, f d'>8_\markup \italic "a tempo"\p
+            %<<{\voiceOne <d, f d'>8_\markup \italic "a tempo"\p}\new Voice{\voiceTwo <d f>8}>>
+          }
         }
+      }\new Voice \relative{\voiceTwo
+        \repeat unfold 12 {s4.}
+        f'4 gis8
+        a4 g8
+        aes8(bes16-.)beses-. aes-. g-.
+        f8(gis-.) f-.
+        f16(e-.)f-. ges-. <f a>-. e-.
+        r f-. e-. f-. d-. cis-.
+        r d-. dis-. e-. f-. g-.
+        r a-. gis-. bes-. a-. b-.
+        r a-. gis-. bes-. c-. b-.
+        r d-. es-. d-. bes-. a-.
+        r g-. gis-. a-. bes-. c-.
+        r es-. d-. f-. es-. d-.
+        r cis-. d-. es-. d-. cis-.
+        r a-. c-. ces-. bes-. a-.
+        r f-. aes-. g-. ges-. f-.
+        r e-. fis-. g-. f-. e-.
+        r f-. b-. bes-. a-. gis-.
+        r a-. c-._\markup \italic "rit." ces-. bes-. a-.
+        f4 <e g>8\>
+        ~8 <d f>\!~ \once \hideNotes 8
+      }\new Voice{\voiceFour
+        \repeat unfold 30 {s4.}
+        a'8[aes]
+      }>>
+      \volta 2 \volta#'() {
+        \section
+        \sectionLabel "Coda"
       }
       % CODA
       \fine
