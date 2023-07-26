@@ -239,13 +239,27 @@
     }
   >>
 }
-\markup \fill-line {
+\markuplist{
+\fill-line {
   \center-column{
     \bold \fontsize #10 "Editorial notes"
   }
 }
-\markup \wordwrap{
-  \vspace #1.5
-  \fontsize #4 {
+\vspace #1.5 % Before first text
+\wordwrap{
+  \fontsize #4 \wordwrap-string
+  #"Text example"
+}
+
+\vspace #2 % Above header
+\wordwrap{
+  \fontsize #6 {
+    Header example
   }
+}
+\vspace #1 % Below header
+\fontsize #4 \wordwrap-string
+#"More text
+
+Two line breaks for a new paragraph"
 }
