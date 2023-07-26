@@ -154,13 +154,27 @@
           <gis d'>8. <e'>16 \break <d f>8\<
           <d f>8. g16 <cis, e>8\!
           d4.~
-          4~)
+          4~) \break
         }
         \alternative{
           \volta 1{
             % NOT REPEATED chord and trio
-            <d, f d'>8_\markup \italic "a tempo"\p
+            <d, f d'>8_\markup \right-align {\italic "a tempo" \dynamic p}
             %<<{\voiceOne <d, f d'>8_\markup \italic "a tempo"\p}\new Voice{\voiceTwo <d f>8}>>
+            \repeat volta 2{
+              f'8->\mf(d-.)a-.
+              a'(f-.)d-.
+              cis(e-.)g-.
+              bes(a-.)g-.
+              fis(cis-.)a-.
+              a'(fis-.)cis-.
+              bis(gis'-.)gis-.
+              gis(a-.)gis-.
+              f!(des-.)aes-.
+              aes'(f-.)des-.
+              c(es-.)ges-.
+              a(aes-._\markup \italic "rit.")ges-.
+            }
           }
         }
       }\new Voice \relative{\voiceTwo
@@ -184,8 +198,23 @@
         r f-. b-. bes-. a-. gis-.
         r a-. c-._\markup \italic "rit." ces-. bes-. a-.
         f4 <e g>8\>
-        ~8 <d f>\!~ \once \hideNotes 8
-      }\new Voice{\voiceFour
+        ~8 <d f>\!~ % NOT REPEATED CHORD
+        \once \hideNotes 8
+        
+        % TRIO
+        f'16(a, d-.)f,-. a-. d,-.
+        a''(d, f-.) a,-. d-. f,-.
+        cis'(e, e'-.)g,-. g'-. bes,-.
+        bes'(des, a'-.) c,-. g'-. bes,-.
+        fis'(a, cis-.) fis,-. a-. cis,-.
+        a''(cis, fis-.) a,-. cis-. fis,-.
+        bis(fis gis'-.) gis,-. gis'-. bis,-.
+        gis'(dis a'-.)fis-. gis-. dis-.
+        f(aes, des-.) f,-. aes-. des,-.
+        aes''(des, f-.) aes,-. des-. f,-.
+        c'(es, es'-.) ges,-. ges'-. a,-.
+        a' c, aes' ces, ges' bes,
+      }\new Voice \relative{\voiceFour
         \repeat unfold 30 {s4.}
         a'8[aes]
       }>>
@@ -236,6 +265,21 @@
       des-. es-. f-. ges-. aes-.[bes-. c-. des-.]\clef treble es-. f-. ges-. aes-.
       ges-. f-. es-. des-. \clef bass c-.[bes-. aes-. ges-.] f-. es-. des-. c-.
       bes16-. aes-. ges-. f-. fes-. es-. \bar "||"
+      des8->[(aes'-.) f'-.]
+      f,(des'-.) aes'-.
+      es,(c'-.) aes'-.
+      aes,(es'-.) c'-.
+      des,,(aes'-.) f'-.
+      f,(\break des'-.) aes'-.
+      e,(cis'-.) a'-.
+      a,!(e'!-.) cis'!-.
+      d,,(a'-.) f'-.
+      f,(d'-.) a'-.
+      e,(cis'-.)g'-.
+      es,!(des'!-.)ges!-.
+      des,(\break
+      % End repeat
+      ges-.)
     }
   >>
 }
