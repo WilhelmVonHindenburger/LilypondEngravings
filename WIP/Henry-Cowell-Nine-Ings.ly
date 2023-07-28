@@ -175,6 +175,10 @@
               c(es-.)ges-.
               a(aes-._\markup \italic "rit.")ges-.
             }
+            f8._\markup \italic "a tempo"(<a, d>16 <cis, a'>8
+            f8. <f a>16 <e bes'>8
+            <cis e a>4\dim <d a' b>8
+            <e a cis>4\> <e a c>8\!) \bar "||"
           }
         }
       }\new Voice \relative{\voiceTwo
@@ -214,6 +218,9 @@
         aes''(des, f-.) aes,-. des-. f,-.
         c'(es, es'-.) ges,-. ges'-. a,-.
         a' c, aes' ces, ges' bes,
+        % End repeat
+        d(a d-.)f,-. f-. e-.
+        d(a d-.)d-. cis8
       }\new Voice \relative{\voiceFour
         \repeat unfold 30 {s4.}
         a'8[aes]
@@ -223,6 +230,8 @@
         \sectionLabel "Coda"
       }
       % CODA
+      \override Tie.direction = #CENTER
+      \scaleDurations 1/2{\once \hideNotes <d f d'>8~8~} \bar "|" 8\fermata
       \fine
     }
     \new Staff \relative{
@@ -277,12 +286,50 @@
       f,(d'-.) a'-.
       e,(cis'-.)g'-.
       es,!(des'!-.)ges!-.
-      des,(\break
+      \once \override Beam.positions = #'(2 . 2) % Make this beam look nicer
+      des,[(\break
       % End repeat
-      ges-.)
+      ges-.)] f32-. g-. a-. bes-.
+      c8[(des-.)] bes32-. c-. des-. es-.
+      f8(f,-.) c'?32-. bes-. a-. g-.
+      f8(c'?-.) bes32-. c-. des-. es-. \scaleDurations 8/9 {f8~ \once \hideNotes 64} \bar "||"
+      % Coda
+      des,4\tenuto\fermata
+      \fine
     }
   >>
 }
+
+\score{
+  \header{
+    subtitle = "3. Fleeting"
+    subsubtitle = ##f
+    title=##f
+    composer=##f
+    opus = "HC 353/3"
+  }
+  \new PianoStaff<<
+    \new Staff \relative{
+      \clef treble
+      \time 3/4
+      \tempo "Allegretto placido"
+      \repeat segno 2{
+        % Repeated part
+        r4\pp r16^\markup \italic "8va sempre" cis''(e f e dis b c
+        gis a b c bes a g gis gis a b c)
+        \volta 2 \fine
+        \volta 1{
+          % Not repeated part
+        }
+      }
+    }
+    \new Staff \relative{
+      \clef treble
+      \time 3/4
+    }
+  >>
+}
+
 \markuplist{
 \fill-line {
   \center-column{
