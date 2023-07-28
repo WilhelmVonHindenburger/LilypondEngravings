@@ -317,6 +317,17 @@
         % Repeated part
         r4\pp r16^\markup \italic "8va sempre" cis''(e f e dis b c
         gis a b c bes a g gis gis a b c)
+        b\<(c d f g e f d\! b c d e
+        f bes, a aes g b cis d\> dis e fis8\!)
+        r4 r16 cis(e f e dis b c
+        gis a b c bes a g gis gis a b c
+        d e fis dis e\< c! cis d dis e g es
+        d\> des c gis a? cis\! f bes, e c es des
+        c b g? gis fis g gis b c\> cis d f\!)
+        
+        % Fermata on barline
+        \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
+          \mark \markup{\smaller \smaller \musicglyph #"scripts.ufermata"}
         \volta 2 \fine
         \volta 1{
           % Not repeated part
@@ -326,6 +337,56 @@
     \new Staff \relative{
       \clef treble
       \time 3/4
+      <<{
+        % Voice one
+        r8 <a' c e>(<b c! e> <a c e> <g c e> <f c' e>)
+        r <e a c>(<f a c> <e a c> <d f a> <c f a>)
+        r <f gis b>(\once \override Stem.length = #11 <gis b> <f gis b> <e gis b> <d gis b>)
+        r <d gis b?>(<e gis b> <d gis b> <c? f gis> <b f'? gis>)
+        r <a' c e>(<b c? e> <a c e> <g c e> <f c' e>)
+        r <e a c>(<f a c> <e a c> <d f a> <c f a>)
+        r <b' d? f?>(<cis d f> <c d f> <b d f> <bes d f>)
+        r <a b d>(<ais b d><gis b d><fis b d><f b d?>)
+        r <d f gis>(\once \override Stem.length = #11 \once \override Accidental.extra-offset = #'(2.5 . 0) <e g!> <d f gis> <c e f> <b d f>)
+      }\\ \relative{
+        % Voice 2
+        a2.
+        a
+        a
+        e
+        a
+        a
+        a
+        a
+        e
+        f
+        f
+        g?
+        g
+        c?
+        e
+        e,
+      }\\ \relative{
+        \voiceThree
+        % Split Stems
+        s2. s2. s4
+        \once \override NoteHead.X-offset = #1.7
+        \once \override Stem.length = #7
+        \once \override Stem.rotation = #'(45 0 0)
+        \once \override Stem.extra-offset = #'(-0.1 . -0.2)
+        \once \override Flag.style = #'no-flag
+        \once \override Accidental.extra-offset = #'(3 . -.1)
+        g'!8 s4.
+        \repeat unfold 5 s2.
+        s4
+        \once \override NoteHead.X-offset = #-3.7
+        \once \override Stem.length = #7
+        \once \override Stem.rotation = #'(-45 0 0)
+        \once \override Stem.extra-offset = #'(-2.6 . -0.2)
+        \once \override Flag.style = #'no-flag
+        \once \override Accidental.extra-offset = #'(3 . -.1)
+        gis8
+      }>>
     }
   >>
 }
