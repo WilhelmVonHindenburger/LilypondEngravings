@@ -338,6 +338,17 @@
         \volta 2 \fine
         \volta 1{
           % Not repeated part
+          <<{
+            % Voice 1
+            \tempo "Più mosso"
+            r8\mp
+          }\\ \relative{
+            % Voice 2
+            
+          }\\ \relative{\voiceThree
+            % Split stems
+            
+          }>>
         }
       }
     }
@@ -357,6 +368,11 @@
         r <d f gis>(\once \override Stem.length = #11 \once \override Accidental.extra-offset = #'(2.5 . 0) <e g!> <d f gis> <c e f> <b d f>)
         r <a' c d>(<b c d><a c d><g c d><f c' d>)
         r <e a c>(<f a c><e a c><d f a><c f a>)
+        r <f a c>(<g? b c><f a c><e g a><d f a>)
+        r <d f a>(<e g a><d f a><c? e f><b d f>)
+        r <c' e g>(<d f g><c e g><b d e><a c e>)
+        r <a? c e?>(<b d e><a c e><g b c><f a c>)
+        r <d f gis>(\once \override Stem.length = #11 <e gis> <d f gis><c e f><b d f>)
       }\\ \relative{
         % Voice 2
         a2.
@@ -395,6 +411,16 @@
         \once \override Flag.style = #'no-flag
         \once \override Accidental.extra-offset = #'(3 . -.1)
         gis8
+        s4.
+        \repeat unfold 6 s2.
+        s4
+        \once \override NoteHead.X-offset = #1.7
+        \once \override Stem.length = #7
+        \once \override Stem.rotation = #'(45 0 0)
+        \once \override Stem.extra-offset = #'(-0.1 . -0.2)
+        \once \override Flag.style = #'no-flag
+        \once \override Accidental.extra-offset = #'(3 . -.1)
+        g8
       }>>
     }
   >>
