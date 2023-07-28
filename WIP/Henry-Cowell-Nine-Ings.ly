@@ -324,6 +324,13 @@
         d e fis dis e\< c! cis d dis e g es
         d\> des c gis a? cis\! f bes, e c es des
         c b g? gis fis g gis b c\> cis d f\!)
+        r4 r16 gis,(b c b ais fisis gis
+        a b c gis b bes a cis d e f fis
+        gis a b, c e d g,? a c b)d,(e
+        f es e cis d b ais bis cis e f gis
+        a cis)b(c d e a, b c d g, a
+        b ais bis gis cis e f e b c es d
+        f)e,(ges_\markup \italic "rit. e dim." f g gis a ais b c cis d)
         
         % Fermata on barline
         \override Score.RehearsalMark.break-visibility = #begin-of-line-invisible
@@ -348,6 +355,8 @@
         r <b' d? f?>(<cis d f> <c d f> <b d f> <bes d f>)
         r <a b d>(<ais b d><gis b d><fis b d><f b d?>)
         r <d f gis>(\once \override Stem.length = #11 \once \override Accidental.extra-offset = #'(2.5 . 0) <e g!> <d f gis> <c e f> <b d f>)
+        r <a' c d>(<b c d><a c d><g c d><f c' d>)
+        r <e a c>(<f a c><e a c><d f a><c f a>)
       }\\ \relative{
         % Voice 2
         a2.
