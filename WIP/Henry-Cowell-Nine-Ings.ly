@@ -344,7 +344,21 @@
             r8\mp
           }\\ \relative{
             % Voice 2
-            
+            e'2.
+            e
+            e
+            e
+            e,
+            e'
+            e
+            e
+            e
+            e
+            f
+            e
+            e
+            e
+            e
           }\\ \relative{\voiceThree
             % Split stems
             
@@ -422,6 +436,22 @@
         \once \override Accidental.extra-offset = #'(3 . -.1)
         g8
       }>>
+      % Middle part
+      a'16(b c d)g,(a b c)f,(g a b)
+      e,(f g a)d,(e f g)c,(d e f)
+      b,(d e f)e(f gis a)d,(e f g)
+      c,(d e f)b,(c d e)a,(b c d)
+      c(b)d(c)e(d)f(e)g(f)a(gis)
+      a(b c d)g,(a b c)f,(g a b)
+      e,(f g a)d,(e f g)c,(d e f)
+      b, c'(b c a c? aes c g c ges c)
+      b, c'(f, c' fis, c' e, c' d, c' des, c')
+      c,(d e f)b,(c d e)a,(b c d)
+      a(f' c' a, b' a, a' a, gis' a, f' a,)
+      gis(e' c' e, b' e, a e g! e f e)
+      d(gis b c, b e g a, b e c' g)
+      a(b c d)g,?(a b c)f,(g a b)
+      b,(d e f)a,(c d e)g,(c d e)\bar "||"
     }
   >>
 }
