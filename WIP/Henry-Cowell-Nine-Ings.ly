@@ -341,7 +341,21 @@
           <<{
             % Voice 1
             \tempo "Più mosso"
-            r8\mp
+            r8\mp <c e>(<b c e><a c e><g c e><f c' e>)
+            r <e a c>(<f a c><e a c><d a' c><c a' c>)
+            r <b' d f>(<c d f><b d f><a d f><gis d' f>)
+            r <f gis b>\>(<gis b><f gis! b><e gis b><d gis b>\!)
+            r <d f gis>\<(<e gis>\! <d f gis!><c e gis>\> <b d gis>\!)
+            r <c' e>(<b c e><a c e><g c e><f c' e>)
+            r <e a c>(<f a c><e a c><d a' c><c a' c>)
+            r <b' d f>(<cis d f><c d f><b d f><bes d f>)
+            r <a b d>(<ais b d><gis b d><fis b d><f b d?>)
+            r <f gis b>(<gis b><f gis! b><e gis b><d gis b>)
+            r\f <e' f>\>(<d f> <c e f><b c f><a c f>\!)
+            r e'(<d e><c e><b d e><a c e>)
+            r d(<c d><b d><a c d><gis b d>)
+            r <c e>_\markup \italic "dim. e rit."(<b c e><a c e><g? c e><f c' e>)
+            r <c' e>(<b d><a c><g b c><f a c>)
           }\\ \relative{
             % Voice 2
             e'2.
@@ -361,8 +375,36 @@
             e
           }\\ \relative{\voiceThree
             % Split stems
-            
+            s2. s2. s2.
+            s4
+            \once \override NoteHead.X-offset = #1.7
+            \once \override Stem.length = #7
+            \once \override Stem.rotation = #'(45 0 0)
+            \once \override Stem.extra-offset = #'(-0.1 . -0.2)
+            \once \override Flag.style = #'no-flag
+            \once \override Accidental.extra-offset = #'(3 . -.1)
+            g'!8
+            s4. s4
+            \once \override NoteHead.X-offset = #1.7
+            \once \override Stem.length = #7
+            \once \override Stem.rotation = #'(45 0 0)
+            \once \override Stem.extra-offset = #'(-0.1 . -0.2)
+            \once \override Flag.style = #'no-flag
+            \once \override Accidental.extra-offset = #'(3 . -.1)
+            g!8 s4.
+            s2. s2. s2. s2. s4
+            \once \override NoteHead.X-offset = #1.7
+            \once \override Stem.length = #7
+            \once \override Stem.rotation = #'(45 0 0)
+            \once \override Stem.extra-offset = #'(-0.1 . -0.2)
+            \once \override Flag.style = #'no-flag
+            \once \override Accidental.extra-offset = #'(3 . -.1)
+            g!8
           }>>
+          \bar "||"
+          \time 2/4
+          <f c' e>2
+          <e b' e gis>\arpeggio \bar "||"
         }
       }
     }
@@ -386,7 +428,7 @@
         r <d f a>(<e g a><d f a><c? e f><b d f>)
         r <c' e g>(<d f g><c e g><b d e><a c e>)
         r <a? c e?>(<b d e><a c e><g b c><f a c>)
-        r <d f gis>(\once \override Stem.length = #11 <e gis> <d f gis><c e f><b d f>)
+        r <d f gis>(\once \override Stem.length = #11 <e gis> <d f gis><c e f><b d f>) \bar "|."
       }\\ \relative{
         % Voice 2
         a2.
@@ -452,6 +494,9 @@
       d(gis b c, b e g a, b e c' g)
       a(b c d)g,?(a b c)f,(g a b)
       b,(d e f)a,(c d e)g,(c d e)\bar "||"
+      \time 2/4
+      f,8(a b d)
+      <e e,>2 \bar "||"
     }
   >>
 }
