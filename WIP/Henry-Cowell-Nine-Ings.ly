@@ -534,7 +534,13 @@
           16 c a4)
           s16 fis?4(a16~
           8.)gis8(ais16~
-          16 b!8 c cis16~
+          
+          16
+          \override Score.Footnote.annotation-line = ##f
+          \footnote \markup { \super "(a)" } #'(0 . 4.5)
+          \markup {\super "(a)" " Staccato markings on the middle voice are absent in this measure of the original edition." }
+          b!8 c cis16~
+          
           16 d8 dis fis!16~
           16 dis8 c)r16
         }\\ \relative{\voiceTwo
@@ -549,11 +555,7 @@
           r <fis! ais>-. r <es g>-.\! r <des f>-.
           r\< d!-. r d-. r f-.\!
           r f-. r_\markup \italic "cresc." <d fis>-. r <e g>-.
-          % WHY THE FUCK DOES THE FOOTNOTE DISPLAY TWICE
-          r \override Score.Footnote.annotation-line = ##f
-          \footnote \markup { \super "(a)" } #'(0 . 4.5)
-          \markup {\super "(a)" " Staccato markings on the middle voice are absent in this measure of the original edition." }
-          <e g>\parenthesize-. r <e? g>\parenthesize-. r <e g>\parenthesize-.
+          r <e g>\parenthesize-. r <e? g>\parenthesize-. r <e g>\parenthesize-.
         }>>
       }
       \alternative{
