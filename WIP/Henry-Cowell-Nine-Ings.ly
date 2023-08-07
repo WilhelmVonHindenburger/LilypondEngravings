@@ -501,6 +501,60 @@
   >>
 }
 
+\score{
+  \header{
+    subtitle = "4. Scooting"
+    subsubtitle = ##f
+    title=##f
+    composer=##f
+    opus="HC 353/4"
+  }
+  \new PianoStaff<<
+    \new Staff \relative{
+      \clef bass
+      \time 3/8
+      \key fis \minor
+      \repeat segno 2{
+        % Repeated part
+        <<{\voiceOne
+          % Voice one
+          s16\mf c'8(e es16~
+          16 bes8 b c16~
+          16 cis8 d fis?16~
+          16 dis8 e cis?16~
+          16 c4)r16
+        }\\ \relative{\voiceTwo
+          % Voice two
+          \override Rest.staff-position = #0 r16 <f a>-. r <f a>-. r <f a>-.
+          \repeat unfold 3{r <f a>-.}
+          r <f a>-.\< r <f a>-. r <f a>-.\!
+          r <e g>-.\> r <f gis>-. r <f a>-.
+          r <f a>-. r <e g>-.\! r <dis fis>-.
+        }>>
+      }
+      \alternative{
+        \volta 1{
+          % Trio
+        }
+        \volta 2 \volta#'() {
+          \section
+          \sectionLabel "Coda"
+        }
+      }
+      % CODA GOES HERE
+    }
+    \new Staff \relative{
+      \clef bass
+      \time 3/8
+      \key fis \minor
+      <fis,! cis'!>8-. 8-. <g d'>-. % ADD BRACKETS
+      <fis cis'>-. <f c'>-. <e b'>-.
+      <es bes'>-. <d a'>-. <cis gis'>-.
+      8-. <c g'>-. 8-.
+    }
+  >>
+}
+
 \markuplist{
 \fill-line {
   \center-column{
