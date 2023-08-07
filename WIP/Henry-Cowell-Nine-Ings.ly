@@ -509,6 +509,12 @@
     composer=##f
     opus="HC 353/4"
   }
+  \layout {
+    \context {
+      \Voice
+      \consists Horizontal_bracket_engraver
+    }
+  }
   \new PianoStaff<<
     \new Staff \relative{
       \clef bass
@@ -523,6 +529,14 @@
           16 cis8 d fis?16~
           16 dis8 e cis?16~
           16 c4)r16
+          r16 e8(cis? dis16~
+          16[eis]dis8. b16~
+          16 c a4)
+          s16 fis?4(a16~
+          8.)gis8(ais16~
+          16 b!8 c cis16~
+          16 d8 dis fis!16~
+          16 dis8 c)r16
         }\\ \relative{\voiceTwo
           % Voice two
           \override Rest.staff-position = #0 r16 <f a>-. r <f a>-. r <f a>-.
@@ -530,6 +544,16 @@
           r <f a>-.\< r <f a>-. r <f a>-.\!
           r <e g>-.\> r <f gis>-. r <f a>-.
           r <f a>-. r <e g>-.\! r <dis fis>-.
+          r <f a>-.\< r <f a>-. r <f a>-.
+          r\! <eis gisis>-.\> r <fis! ais>-. r <fis ais>-.
+          r <fis! ais>-. r <es g>-.\! r <des f>-.
+          r\< d!-. r d-. r f-.\!
+          r f-. r_\markup \italic "cresc." <d fis>-. r <e g>-.
+          % WHY THE FUCK DOES THE FOOTNOTE DISPLAY TWICE
+          r \override Score.Footnote.annotation-line = ##f
+          \footnote \markup { \super "(a)" } #'(0 . 4.5)
+          \markup {\super "(a)" " Staccato markings on the middle voice are absent in this measure of the original edition." }
+          <e g>\parenthesize-. r <e? g>\parenthesize-. r <e g>\parenthesize-.
         }>>
       }
       \alternative{
@@ -547,10 +571,20 @@
       \clef bass
       \time 3/8
       \key fis \minor
-      <fis,! cis'!>8-. 8-. <g d'>-. % ADD BRACKETS
+      \override HorizontalBracket.direction = #UP
+      \override HorizontalBracket.bracket-flare = #'(0 . 0)
+      <fis,! cis'!>8-. \startGroup 8-. <g d'>-.
       <fis cis'>-. <f c'>-. <e b'>-.
       <es bes'>-. <d a'>-. <cis gis'>-.
-      8-. <c g'>-. 8-.
+      8-. <c g'>-. 8-. \stopGroup
+      <cis! gis'!>-. \startGroup 8-. <d? a'>-.
+      <cis gis'>-. <c g'>-. <bes f'>-.
+      <es bes'>-. <d a'>-. <cis gis'>-.
+      <f c'>-. \stopGroup r4
+      <fis! cis'!>8-. 8-. <g cis>->
+      <fis? cis'>-. 8-. <f cis'>->
+      <e cis'>-. <es cis'>-. <d~ cis'>->
+      <d cis'>-. <cis cis'>-. 8-. <c cis'?>-. 8-. cis'-.
     }
   >>
 }
