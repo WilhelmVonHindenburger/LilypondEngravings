@@ -543,6 +543,8 @@
           
           16 d8 dis fis!16~
           16 dis8 c)r16
+          \override Rest.staff-position = #0 r16\pp a,4-> r16 \revert Rest.staff-position
+          s16 a'4-> r16
         }\\ \relative{\voiceTwo
           % Voice two
           \override Rest.staff-position = #0 r16 <f a>-. r <f a>-. r <f a>-.
@@ -556,6 +558,11 @@
           r\< d!-. r d-. r f-.\!
           r f-. r_\markup \italic "cresc." <d fis>-. r <e g>-.
           r <e g>\parenthesize-. r <e? g>\parenthesize-. r <e g>\parenthesize-.
+          r <e g>-. r <e g>-. r <f a>-.
+          r <f a>-.\> r <e gis>\parenthesize-. r8\!
+          s4.
+          r16\mp <b d f>-. r <b dis f>-. r8
+          
         }>>
       }
       \alternative{
@@ -587,6 +594,8 @@
       <fis? cis'>-. 8-. <f cis'>->
       <e cis'>-. <es cis'>-. <d~ cis'>->
       <d cis'>-. <cis cis'>-. 8-. <c cis'?>-. 8-. cis'-.
+      <cis, gis'>-. 8-. <cis fisis>->
+      <cis gis'>-. 8-. <cis a'>->
     }
   >>
 }
