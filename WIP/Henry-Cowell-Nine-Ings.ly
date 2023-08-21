@@ -545,6 +545,8 @@
           16 dis8 c)r16
           \override Rest.staff-position = #0 r16\pp a,4-> r16 \revert Rest.staff-position
           s16 a'4-> r16
+          s16 cis8(c b16~
+          16 d8 c8)r16
         }\\ \relative{\voiceTwo
           % Voice two
           \override Rest.staff-position = #0 r16 <f a>-. r <f a>-. r <f a>-.
@@ -562,7 +564,8 @@
           r <f a>-.\> r <e gis>\parenthesize-. r8\!
           s4.
           r16\mp <b d f>-. r <b dis f>-. r8
-          
+          r16\mf <e a?>-. r <d f>-. r <dis g>-.
+          r <f bes>-. r <d fis gis!>-. r8
         }>>
       }
       \alternative{
@@ -596,6 +599,8 @@
       <d cis'>-. <cis cis'>-. 8-. <c cis'?>-. 8-. cis'-.
       <cis, gis'>-. 8-. <cis fisis>->
       <cis gis'>-. 8-. <cis a'>->
+      <cis ais'>-. <cis b'>-. <cis? c'~>->
+      <cis c'>-. <cis cis'>-. <cis cis'>-.
     }
   >>
 }
